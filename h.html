@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime No.</title>
+</head>
+<body>
+	
+		<div id="lol">
+			<h1>Prime Number Checker</h1>
+             <p>Enter your prime number below in the box: </p>
+             <input id="ro" type="number" name="number" min="2"><br>
+             <button id="x" type="submit">Submit</button><button type="submit" id="y">reset</button><br>
+             <p id="o"></p>
+		</div>
+	
+
+	<style type="text/css" media="screen">
+	body{
+	    	background-color: rgb(201, 32, 32);
+	    }
+	#lol{
+		 background-color:rgb(152,38, 14); 
+         margin:10% 35%;
+         padding :2%;
+         border: solid rgb(47, 165, 43);.
+         
+	    }
+	    h1{
+	    color: rgb(219, 150, 89);
+	    }
+	    button{
+	    	padding: 8px 20px;
+	    	margin-top: 9px;
+	    	border-radius: 3px;
+	    	border:none;
+           background-color:rgb(92, 146, 232); 
+           margin-right: 13px;
+	    }
+	    button:active{
+	    	 background-color:rgba(92, 146, 232,0.7);
+	    }
+	    input{
+	    	padding: 2% 5%;
+	    	border-radius: 3px;
+	    	border:2px solid gray;
+            display: inline-block;
+            cursor: pointer;
+	    }
+	    p{
+	    	font-size: 20px;
+	    }
+	    #o{
+	    	font-size: 20px;
+	    }
+	</style>
+    <script type="text/javascript">
+   var button=document.querySelector("#x");
+   var btn=document.querySelector("#y");
+   var num=document.querySelector("input[type='number']");
+   var p=document.querySelector("#o");
+   console.log(Number(num.value));
+    button.addEventListener("click",function () {
+	for (var i = 2; i < Number(num.value); i++) {
+		if (Number(num.value)%i===0) {
+			p.textContent="Not prime";
+			console.log(i);
+		}
+	}});
+	function reset(){
+		p.textContent="";
+	}
+  btn.addEventListener("click",function(){
+		p.textContent="";
+	});
+</script>
+</body>
+</html>
